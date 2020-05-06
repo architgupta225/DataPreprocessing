@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('Salary_Data.csv')
+file_name='C:\Users\ACER\Desktop\Machine Learning\Simple Linear Regression\Salary_Data.csv'
+dataset = pd.read_csv('file_name')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
@@ -22,7 +23,7 @@ regressor.fit(X_train, y_train)
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
 
-# Visualising the Training set results
+# PLotting training set results 
 plt.scatter(X_train, y_train, color = 'red')
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary vs Experience (Training set)')
@@ -30,7 +31,7 @@ plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
 plt.show()
 
-# Visualising the Test set results
+# PLotting test set results 
 plt.scatter(X_test, y_test, color = 'red')
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary vs Experience (Test set)')
